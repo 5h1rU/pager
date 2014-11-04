@@ -1,0 +1,7 @@
+<div ng-show="currentMovie" class="col-md-8">
+  <img ng-src="{{currentMovie.posters.detailed}}" alt="{{currentMovie.title}}"/>
+  <p>{{currentMovie.synopsis}}</p>
+</div>
+<div ng-hide="currentMovie" class="col-md-8">
+  <div class="alert alert-info" role="alert">Please select a movie</div>
+</div>

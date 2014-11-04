@@ -1,0 +1,12 @@
+<div ng-show="movies" class="col-md-3">
+  <ul class="btn-group list-unstyled">
+    <li ng-repeat="movie in movies" class="">
+      <button ng-click="selectMovie(movie.id, $index)" class="col-md-12 btn btn-default" ng-class="{active: $index===selectedIndex}">
+        {{movie.title}}
+      </button>
+    </li>
+  </ul>
+</div>
+<div ng-hide="movies">
+  <img src="../images/loading.gif">
+</div>
