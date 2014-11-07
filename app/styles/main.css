@@ -1,0 +1,40 @@
+.navbar-header {
+  background: red;
+}
+
+.page-header {
+  margin: 10px 0;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 3rem;
+}
+
+.img-movie {
+  margin: 0 0 10px 10px;
+  float: right;
+}
+
+.header-show-hide, .movies-show-hide {
+  -webkit-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+}
+
+.header-show-hide.ng-hide, .movies-show-hide.ng-hide{
+  opacity:0;
+}
+
+@media (max-width: 767px) {
+  .movies-list {
+    position: absolute;
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+  .ismobile {
+    display: none;
+  }
+}

@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Pager Test">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -15,17 +15,16 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="pagerApp" ng-controller="moviesController">
+  <body ng-app="pagerApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
     <div class="container">
-      <h1 class="page-header" ng-show="currentMovie">{{currentMovie.title}}</h1>
-      <h1 class="page-header" ng-hide="currentMovie">Pager Movie list</h1>
-      <ng-include src="'views/list.html'"></ng-include>
-      <ng-include src="'views/details.html'"></ng-include>
+      <ng-include src="'views/header.html'" ng-controller="moviesDetailsController"></ng-include>
+      <ng-include src="'views/list.html'" ng-controller="moviesListController"></ng-include>
+      <ng-include src="'views/details.html'" ng-controller="moviesDetailsController"></ng-include>
     </div>
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
@@ -51,8 +50,10 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/movies.js"></script>
+        <script src="scripts/controllers/list.js"></script>
+        <script src="scripts/controllers/details.js"></script>
         <script src="scripts/services/movies.js"></script>
+        <script src="scripts/services/ctrl-handler.js"></script>
         <!-- endbuild -->
 </body>
 </html>

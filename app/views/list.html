@@ -1,7 +1,7 @@
-<div ng-show="movies" class="col-md-3">
+<div ng-show="movies" class="col-xs-12 col-sm-3 movies-list" ng-class="{ismobile: mobile === true}">
   <ul class="btn-group list-unstyled">
-    <li ng-repeat="movie in movies" class="">
-      <button ng-click="selectMovie(movie.id, $index)" class="col-md-12 btn btn-default" ng-class="{active: $index===selectedIndex}">
+    <li ng-repeat="movie in movies" class="col-xs-12">
+      <button ng-click="setMovies(movie.id, $index)" class="col-xs-12 btn btn-default" ng-class="{active: $index === selectedIndex}">
         {{movie.title}}
       </button>
     </li>
