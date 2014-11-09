@@ -1,11 +1,16 @@
 'use strict';
 angular.module('Movieslist.controllers', [])
-  .controller('moviesListController', function moviesListController($scope, moviesApi, Movie) {
+  .controller('moviesListController', function moviesListController($scope, moviesApi, Movie, Ismobile) {
 
     $scope.mobile = false;
 
     moviesApi.dvds().success(function(response) {
       $scope.movies = response.movies;
+    });
+
+    $scope.$on('mobileStatusChanged', function() {
+      console.log(Ismobile.status);
+      $scope.ismobile = Ismobile.status;
     });
 
     $scope.setMovies = function(id, $index) {
@@ -14,14 +19,12 @@ angular.module('Movieslist.controllers', [])
         Movie.setMovie(id);
       });
 
-      $scope.selectedIndex = $index;
-      $scope.mobile = true;
-      Movie.setMovie(id);
-    }
+      $scope.$watch('isMobile', function() {
+        Ismobile.detect(true);
+      });
 
-    $scope.back = function() {
-      $location.path('/');
-      $scope.master = true;
+      $scope.selectedIndex = $index;
+      Movie.setMovie(id);
     }
 
   });

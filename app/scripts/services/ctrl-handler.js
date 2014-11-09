@@ -1,3 +1,4 @@
+'use strict';
 var pagerApp = angular.module('pagerApp');
 
 pagerApp.factory('Movie', function($rootScope) {

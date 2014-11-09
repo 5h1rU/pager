@@ -1,4 +1,4 @@
-<div ng-show="movies" class="col-xs-12 col-sm-3 movies-list" ng-class="{ismobile: mobile === true}">
+<div ng-show="movies" class="col-xs-12 col-sm-3 movies-list" ng-class="{ismobile: ismobile === true}">
   <ul class="btn-group list-unstyled">
     <li ng-repeat="movie in movies" class="col-xs-12">
       <button ng-click="setMovies(movie.id, $index)" class="col-xs-12 btn btn-default" ng-class="{active: $index === selectedIndex}">
@@ -8,5 +8,5 @@
   </ul>
 </div>
 <div ng-hide="movies">
-  <img src="../images/loading.gif">
+  <img class="img-loading" src="../images/loading.gif">
 </div>

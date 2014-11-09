@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'Movieslist.controllers',
-    'Movieslist.services'
+    'Movieslist.services',
+    'Mobile.services'
   ])
   .config(function ($routeProvider) {
     $routeProvider

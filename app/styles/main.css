@@ -16,6 +16,10 @@
   float: right;
 }
 
+.img-loading {
+  max-width: 100%;
+}
+
 .header-show-hide, .movies-show-hide {
   -webkit-transition:all linear 0.5s;
   transition:all linear 0.5s;
