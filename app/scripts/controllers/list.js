@@ -2,14 +2,11 @@
 angular.module('Movieslist.controllers', [])
   .controller('moviesListController', function moviesListController($scope, moviesApi, Movie, Ismobile) {
 
-    $scope.mobile = false;
-
     moviesApi.dvds().success(function(response) {
       $scope.movies = response.movies;
     });
 
     $scope.$on('mobileStatusChanged', function() {
-      console.log(Ismobile.status);
       $scope.ismobile = Ismobile.status;
     });
 

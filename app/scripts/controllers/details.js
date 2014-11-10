@@ -1,5 +1,5 @@
 'use strict';
-angular.module('Movieslist.controllers')
+angular.module('MoviesDetails.controllers', [])
   .controller('moviesDetailsController', function moviesDetailsController($scope, moviesApi, $location, Movie, Ismobile) {
 
     $scope.$on('movieUpdated', function() {
@@ -8,7 +8,6 @@ angular.module('Movieslist.controllers')
     });
 
     $scope.$on('mobileStatusChanged', function() {
-      console.log(Ismobile.status);
       $scope.ismobile = Ismobile.status;
     });
 
@@ -34,6 +33,5 @@ angular.module('Movieslist.controllers')
       detailed = $scope.currentMovie.posters.detailed.split('_', 3);
       $scope.currentMovie.posters.detailed = _.first(detailed).concat('_det.jpg');
     }
-
 
   });

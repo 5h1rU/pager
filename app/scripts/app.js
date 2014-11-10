@@ -17,6 +17,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'Movieslist.controllers',
+    'MoviesDetails.controllers',
     'Movieslist.services',
     'Mobile.services'
   ])
